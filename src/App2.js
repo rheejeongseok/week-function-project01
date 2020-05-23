@@ -29,6 +29,11 @@ function App2(){
         })
     }, [])
 
+    // 이벤트는 함수안에서 하자
+    const handlerChange = (e) => {
+        console.log(e.target.value);
+    }
+
     const html = music.map((m) =>
         <tr>
             <td>{m.rank}</td>
@@ -57,7 +62,7 @@ function App2(){
                 <tbody>
                     <tr>
                         <td>
-                            <input type="text" className="input-sm" size="25"/>
+                            <input type="text" className="input-sm" size="25" onChange={handlerChange}/>
                         </td>
                     </tr>
                 </tbody>
