@@ -52,7 +52,7 @@ function App2(){
     return(
         <div className="row">
             <H2 />
-            <div style={{"height":"30px"}}></div>
+            <div style={{"height":"32px"}}></div>
             <table className="table">
                 <tbody>
                     <tr>
