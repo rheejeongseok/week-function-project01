@@ -91,3 +91,27 @@ app.get("/movie_home", (req, res) => {
     })
 
 })
+
+app.get('/movie_news', (req, res) => {
+
+    let url = "mongodb://211.238.142.181:27017";
+    client.connect(url, (error, client) => {
+        let db = client.db("mydb");
+        db.collection("news").find({}).toArray((err, docs) => {
+            res.json(docs)
+            client.close();
+        });
+    });
+});
+
+app.get('/movie_pop', (req, res) => {
+
+    let url = "mongodb://211.238.142.181:27017";
+    client.connect(url, (error, client) => {
+        let db = client.db("mydb");
+        db.collection("news_pop").find({}).toArray((err, docs) => {
+            res.json(docs)
+            client.close();
+        });
+    });
+});
